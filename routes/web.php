@@ -33,4 +33,4 @@ require __DIR__.'/auth.php';
 
 
 // Rotta per pagina admin
-Route::get('/admin', [DashboardController::class, 'index']);
+Route::get('/admin', [DashboardController::class, 'index'])->middleware(['auth']);
