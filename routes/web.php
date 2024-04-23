@@ -44,6 +44,6 @@ Route::middleware(['auth', 'verified'])
 
         Route::get('/users', [DashboardController::class, 'users'])->name('users');
 
-
+        Route::resource('project', ProfileController::class);
     }
 );
