@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,6 @@ Route::middleware(['auth', 'verified'])
 
         Route::get('/users', [DashboardController::class, 'users'])->name('users');
 
-        Route::resource('project', ProfileController::class);
+        Route::resource('projects', ProjectController::class);
     }
 );

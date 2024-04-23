@@ -22,7 +22,22 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            
+            "name"=> "unique:projects,name|max:255|required",
+            "argument"=> "required",
+
+        ];
+    }
+
+    public function messages(): array{
+
+        return [
+            
+            "name:unique"=> "È già presente un progetto con questo nome",
+            "name.max"=> "Il nome non può essere più lungo di :max carratteri",
+            "name.required"=> "Il nome del progetto deve essere inserito",
+            "argument.required"=> "L'argomento del progetto deve essere inserito",
+
         ];
     }
 }
