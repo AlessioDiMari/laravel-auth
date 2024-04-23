@@ -22,7 +22,7 @@
                         <td>{{$project->name}}</td>
                         <td>{{$project->argument}}</td>
                         <td>
-                            <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-outline-primary">Vedi</a>
+                            <a href="{{route('admin.projects.show', $project->id)}}" class="btn btn-outline-primary">Vedi</a>
                         </td>
                     </tr>
 
@@ -31,6 +31,7 @@
             </tbody>
         </table>
 
+        <a href="{{route('admin.projects.create')}}" class="btn btn-primary">Aggiungi un progetto</a>
 
     </div>
 
