@@ -10,7 +10,7 @@
         {{-- @dump($user) --}}
 
 
-        {{-- <a href="{{route('admin.projects.create')}}" class="btn btn-primary">Aggiungi un progetto</a> --}}
+        <a href="{{route('admin.projects.index')}}" class="btn btn-primary">Sezione progetti</a>
 
     </div>
 

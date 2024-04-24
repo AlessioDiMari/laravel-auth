@@ -19,7 +19,10 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+
+                
             </div>
+            <a href="{{route('admin.index')}}" class="btn btn-primary my-5">Sezione di amministrazione</a>
         </div>
     </div>
 </div>
