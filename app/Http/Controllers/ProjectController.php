@@ -39,16 +39,17 @@ class ProjectController extends Controller
         $request->validated();
 
         $newProject = new Project();
-        
+        $newProject->fill($request->all());
+
         // controllo se è presente un filein arrivo nella request
         if( $request->hasFile("cover_image")){
             
             // salvo il percorso dell'immagine e la suddetta nel server
             $path = Storage::disk("public")->put("project_image", $request->cover_image,);
-            
+
         }
 
-        $newProject->fill($request->all());
+        $newProject->cover_image = $path;
 
         $newProject->save();
 

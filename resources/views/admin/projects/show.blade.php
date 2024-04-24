@@ -4,9 +4,12 @@
 
     <div class="container py-5">
 
+      <img src="{{asset('storage/'. $project->cover_image)}}" alt="Copertina" class="img-fluid">
+
         <h1>{{$project->name}}</h1>
 
         <p>{{$project->argument}}</p>
+
 
         <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-warning">Modifica</a>
 
