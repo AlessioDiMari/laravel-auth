@@ -15,7 +15,7 @@ class Project extends Model
     protected $fillable = [
 
         "name",
-        "argument"
-
+        "argument",
+        "cover_image"
     ];
 }

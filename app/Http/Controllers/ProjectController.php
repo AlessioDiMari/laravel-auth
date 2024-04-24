@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -32,9 +33,21 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+
+        // dd($request);
+
         $request->validated();
 
         $newProject = new Project();
+        
+        // controllo se è presente un filein arrivo nella request
+        if( $request->hasFile("cover_image")){
+            
+            // salvo il percorso dell'immagine e la suddetta nel server
+            $path = Storage::disk("public")->put("project_image", $request->cover_image,);
+            
+        }
+
         $newProject->fill($request->all());
 
         $newProject->save();
