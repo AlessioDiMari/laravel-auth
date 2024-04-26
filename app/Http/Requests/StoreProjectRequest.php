@@ -25,7 +25,7 @@ class StoreProjectRequest extends FormRequest
             
             "name"=> "unique:projects,name|max:255|required",
             "argument"=> "required",
-            "cover_image"=> "nullable",
+            "cover_image"=> "file|size:2048|nullable",
         ];
     }
 

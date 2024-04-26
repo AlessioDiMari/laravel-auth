@@ -35,6 +35,12 @@
                 @enderror
             </div>
 
+            <img src="{{asset('storage/'. $project->cover_image)}}" alt="Copertina" class="img-fluid">
+            <div class="input-group mb-4">
+                <label for="cover_image" class="input-group-text">Copertina</label>
+                <input type="file" class="form-control" id="cover_image" name="cover_image">
+            </div>
+
             <button class="btn btn-primary">Aggiungi</button>
 
         </form>
